@@ -97,7 +97,7 @@ module Faraday
           env[:method].to_s.upcase, # request method
           !!env[:body], # is there request body
           env[:method] != :head, # is there response body
-          env[:url].request_uri, # request uri path
+          env[:url].path, # request uri path
           env[:request_headers] # request headers
 
         if env[:body].respond_to?(:read)
